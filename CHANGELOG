@@ -1,0 +1,5 @@
+Version 1.02
+- Added a new 'iA3 Options' page within the Wordpress admin system. Within this page you can more easily setup the header, contact and footer links. You can also easily edit the colour scheme used throughout the site.
+- Optimised the styles for better viewing on the iPad and other scaleable browsers.
+- Updated the Tweets template to gracefully degrade if Twitter For Wordpress is not installed.
+- Fixed some minor design issues and HTML/CSS validation errors.

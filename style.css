@@ -1,0 +1,21 @@
+/*
+Theme Name: krTheme
+Description: A simple HTML5 wordpress theme.
+Version: 1.02
+Author: Kenneth Reitz
+Author URI: http://kennethreitz.com/
+Tags: monochrome, fixed width, simple, typographic, html5
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+
+*/
+
+@import url(css/bundle.css.php?dir=css&files=base,typography,list,frame,header,footer);
+/*@import url(css/base.css);*/
+/*@import url(css/typography.css);*/
+/*@import url(css/list.css);*/
+/*@import url(css/frame.css);*/
+/*@import url(css/header.css);*/
+/*@import url(css/footer.css);*/
+@import url(css/iphone.css) screen and (max-device-width: 320px);
