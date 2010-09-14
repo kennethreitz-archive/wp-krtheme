@@ -1,6 +1,6 @@
 <?php
 /**
-*   Template Name: Search
+*   Template Name: Archives
 **/
 ?>
 <!DOCTYPE html>
@@ -18,12 +18,11 @@
         
             <section class="G4 GR" id="content">
                 <header>
-                    <h1><?php printf(__('Search Results for &lsquo;%s&rsquo;'), get_search_query()); ?></h1>
+                    <h1><?php the_title(); ?></h1>
                     <?php get_search_form(); ?>
                 </header>
-                <?php if (have_posts()): ?>
                 <dl class="containsArticles">
-                    <?php while(have_posts()): the_post(); ?>
+                    <?php query_posts('orderby=date&order=DESC&posts_per_page=-1'); while(have_posts()): the_post(); ?>
                     <dt>
                         <hgroup>
                             <a class="title" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
@@ -35,9 +34,6 @@
                     </dd>
                     <?php endwhile; ?>
                 </dl><!-- .containsArticles -->
-                <?php else: ?>
-                <p><?php printf(__('Your search for <em>%s</em> returned no results.'), get_search_query()); ?></p>
-                <?php endif; ?>
             </section><!-- #content.ia.ia-4.ia-r.ia-s -->
             <hr class="implied" />
         

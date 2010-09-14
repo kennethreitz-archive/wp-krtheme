@@ -1,149 +1,101 @@
 <?php
-/*
-Template Name: Tweets
-*/
-
-add_action('wp_head', 'page_head');
-get_header();
-
-function page_head(){
-	?>
-	<style type="text/css" media="all">
-	.contentBody ul {
-	color: #000;
-	list-style: none;
-	background-position: top;
-	}
-
-	.contentBody ul li {
-	margin: 0;
-	padding: .5em 0;
-	background-position: bottom;
-	}
-
-	.contentBody figure.twitterIcon {
-	margin: 0 10px 0 0;
-	padding: 0;
-	float: left;
-	}
-
-	.contentBody .lf {
-	margin-bottom: 5em;
-	}
-
-	.contentBody a.tweetsHead {
-	margin: 0 0 10px;
-	color: #000;
-	text-decoration: none;
-	}
-
-	.contentBody a.tweetsHead:hover * {
-	text-decoration: underline;
-	}
-
-	.contentBody a.tweetsHead h2 {
-	font-size: 150%;
-	/*display: inline-block;*/
-	margin: 0 0 5px;
-	padding: 0px;
-	line-height: 1;
-	}
-
-	.contentBody a.tweetsHead ul {
-	margin: 0;
-	float: left;
-	font-size: 90%;
-	}
-
-	.contentBody a.tweetsHead ul li {
-	padding: 0;
-	line-height: 1.3;
-	}
-
-	.content.tweets {
-	clear: left;
-	font-size:14px;
-	margin: .7em 0 0;
-	word-wrap: break-word;
-	}
-
-	.tweetPosted a {
-	color: #999;
-	text-decoration: none;
-	}
-
-	@media screen and (max-device-width: 320px){
-	.contentBody .lf {
-	margin-bottom: 0;
-	}
-	}
-	</style>
-	<?php
-}
+/**
+*   Template Name: Tweets
+**/
 ?>
-
-<?php
-function ia_tweet($username, $fullname, $title){?>
-	<a href="http://twitter.com/<?php echo $username ?>" class="tweetsHead">
-		<figure class="twitterIcon">
-			<img src="http://img.tweetimag.es/i/<?php echo $username?>_n" width="56" height="56" />
-		</figure>
-		<h2><?php echo $username?></h2>
-		<ul>
-			<li class="fullname"><?php echo $fullname?></li>
-			<li class="jobtitle"><?php echo $title?></li>
-		</ul>
-	</a>
-	<div class="content tweets">
-		<?php if (function_exists('twitter_messages')) twitter_messages($username, 5, true, true, 'update'); ?>
-	<!-- /.content .tweet--></div>
-<?php } ?>
-
-<?php if (have_posts()): while (have_posts()): the_post(); ?>
-<div class="contentBody wide">
-	<article>
-		<h1 class="contentTitle"><?php the_title(); ?></h1>
-		<div class="content">
-			<?php the_content(); ?>
-
-			<div class="lf w6c">
-				<div class="lu w2c">
-					<?php ia_tweet("iA","Oliver Reichenstein", "CEO, Founder")?>
-				<!--/.lu .w2c--></div>
-
-				<div class="lu w2c">
-					<?php ia_tweet("iA_Chris","Chris Lüscher", "Partner")?>
-				<!--/.lu .w2c--></div>
-
-				<div class="lu w2c">
-					<?php ia_tweet("iA_Cyrill","Cyrill Treptow", "Partner")?>
-				<!--/.lu .w2c--></div>
-			<!--/.lf .w6c--></div>
-
-			<div class="lf w6c">
-				<div class="lu w2c">
-					<?php ia_tweet("iA2","Takeshi Tanaka", "Information Designer")?>
-				<!--/.lu .w2c--></div>
-
-				<div class="lu w2c">
-					<?php ia_tweet("johanprag","Johan Prag", "Information Designer")?>
-				<!--/.lu .w2c--></div>
-
-				<div class="lu w2c">
-					<?php ia_tweet("beseku","Ben Sekulowicz-Barclay", "CTO")?>
-				<!--/.lu .w2c--></div>
-			<!--/.lf .w6c--></div>
-
-			<div class="lf w6c">
-				<div class="lu w2c">
-					<?php ia_tweet("webtrendmap","Trending Links", "iA Service")?>
-				<!--/.lu .w2c--></div>
-
-				<div class="lu w2c">
-					<?php ia_tweet("tputh","Tputh", "iA Service")?>
-				<!--/.lu .w2c--></div>
-			<!--/.lf .w6c--></div>
-		</div>
-	</article>
-</div><!-- /.contentBody -->
-<?php endwhile; endif; get_footer(); ?>
+<!DOCTYPE html>
+<!--[if IE 6 ]><html class="ie ielt9 ielt8 ielt7 ie6" lang="<?php bloginfo('language'); ?>"><![endif]-->
+<!--[if IE 7 ]><html class="ie ielt9 ielt8 ie7" lang="<?php bloginfo('language'); ?>"><![endif]-->
+<!--[if IE 8 ]><html class="ie ielt9 ie8" lang="<?php bloginfo('language'); ?>"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="<?php bloginfo('language'); ?>"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="<?php bloginfo('language'); ?>"><!--<![endif]-->
+    <head>
+        <?php @include('inc_head.php'); ?>
+    </head>
+    <body class="tweets">
+        <div id="screen">
+            <?php @include('inc_body_header.php'); ?>
+        
+            <section class="G4 GR GS" id="content">
+                <header>
+                    <h1><?php _e('Tweets', 'ia3'); ?></h1>
+                </header>
+                
+                <ol id="containsTweets"></ol><!-- #containsTweets -->
+                
+                <ul class="containsGrid" id="containsTwoosers">
+                    <li class="G1 GS">
+                        <hgroup>
+                            <h2><a class="twooser" href="http://twitter.com/iA">iA</a></h2>
+                            <h3>Oliver Reichenstein</h3>
+                            <h4><abbr>CEO</abbr>, Founder</h4>
+                        </hgroup>
+                        <img alt="iA" class="twooser" src="http://purl.org/net/spiurl/iA" />
+                    </li>
+                    <li class="G1">
+                        <hgroup>
+                            <h2><a class="twooser" href="http://twitter.com/iA_Chris">iA_Chris</a></h2>
+                            <h3>Chris Luscher</h3>
+                            <h4>Partner</h4>
+                        </hgroup>
+                        <img alt="iA_Chris" src="http://purl.org/net/spiurl/iA_Chris" />
+                    </li>                            
+                    <li class="G1">
+                        <hgroup>
+                            <h2><a class="twooser" href="http://twitter.com/beseku">beseku</a></h2>
+                            <h3>Ben Sekulowicz</h3>
+                            <h4><abbr title="Chief Technology Officer">CTO</abbr></h4>
+                        </hgroup>
+                        <img alt="beseku" src="http://purl.org/net/spiurl/beseku" />
+                    </li>
+                    <li class="G1">
+                        <hgroup>
+                            <h2><a class="twooser" href="http://twitter.com/iA2">iA2</a></h2>
+                            <h3>Takeshi Tanaka</h3>
+                            <h4>Information Designer</h4>
+                        </hgroup>
+                        <img alt="iA2" src="http://purl.org/net/spiurl/iA2" />
+                    </li>
+                    <li class="G1 GS">
+                        <hgroup>
+                            <h2><a class="twooser" href="http://twitter.com/iA_Ralf">iA_Ralf</a></h2>
+                            <h3>Ralf Ressman</h3>
+                            <h4>Project Manager</h4>
+                        </hgroup>
+                        <img alt="iA2" src="http://purl.org/net/spiurl/iA_Ralf" />
+                    </li>
+                    <li class="G1">
+                        <hgroup>
+                            <h2><a class="twooser" href="http://twitter.com/tputh">tputh</a></h2>
+                            <h3>Tputh</h3>
+                            <h4>iA Service</h4>
+                        </hgroup>
+                        <img alt="tputh" src="http://purl.org/net/spiurl/tputh" />
+                    </li>
+                    <li class="G1">
+                        <hgroup>
+                            <h2><a class="twooser" href="http://twitter.com/webtrendmap">webtrendmap</a></h2>
+                            <h3>Web Trend Map</h3>
+                            <h4>iA Service</h4>
+                        </hgroup>
+                        <img alt="webtrendmap" src="http://purl.org/net/spiurl/webtrendmap" />
+                    </li>
+                </ul><!-- .containsGrid#containsTwoosers -->
+                
+                <?php while (have_posts()): the_post(); ?>
+                <div class="formatted">
+                    <?php the_content(); ?>
+                </div><!-- .formatted -->
+                <?php endwhile; ?>
+            </section><!-- .G4.GR.GS -->
+            <hr class="implied" />
+        
+            <?php @include('inc_body_footer.php'); ?>
+            <script>
+                $(document).ready(function() {
+                    $(document).trigger('CORE:FOUND_TWEETLIST');
+                });
+            </script>
+        </div><!-- #screen -->
+    </body>
+</html>    
