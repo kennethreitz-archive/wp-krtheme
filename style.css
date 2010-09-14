@@ -98,7 +98,7 @@ input,select {
 }
 address,blockquote,caption,cite,code,dl,figcaption,h1,h2,h3,h4,h5,h6,label,legend,ol,p,pre,ul,table {
 	display: block;
-	font: normal normal 400 1.05em/1.5em 'goudy old style', 'minion pro', 'bell mt', Georgia, 'Hiragino Mincho Pro', serif;
+	font: normal normal 400 1em/1.5em 'goudy old style', 'minion pro', 'bell mt', Georgia, 'Hiragino Mincho Pro', serif;
 	list-style: none;
 	margin: 0 0 1.5em;
 	text-rendering: optimizeLegibility
@@ -676,7 +676,8 @@ label.HSC {
 #screen > header a {
 	color: #000 !important;
 	display: block;
-	text-decoration: none
+	text-decoration: none;
+	font-size: 1.05em;
 }
 #screen > header a:hover {
 	text-decoration: underline
