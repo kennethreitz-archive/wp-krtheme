@@ -1,0 +1,89 @@
+body {
+font-size: small;
+_font-size: x-small;_font-size/**/:small;
+font-family: ;
+font-family: 'goudy old style', 'minion pro', 'bell mt', Georgia, "Hiragino Mincho Pro", serif;
+line-height: 1.5;
+}
+body header, body footer {
+font-size: 111%;
+}
+.topAside h3, header nav.mainNav ul li, header nav.langSelector ul li, footer h3, .superiorTitle, .red12px {
+margin-bottom: 2px;
+font-size: 14px;
+line-height: 16px;/* color:#c00;*/ letter-spacing:.1em;
+text-transform: uppercase;
+}
+header nav.mainNav ul li li, header nav.langSelector ul li li, header nav.mainNav ul li li a, header nav.langSelector ul li li a {
+letter-spacing: 0;
+color: #000;
+text-transform: capitalize;
+}
+.contentBody, .bodyText {
+/*font-size: medium;*/
+font-size: 18px;
+line-height: 24px;
+}
+.contentBody p {
+margin-bottom: 1.5em;
+}
+.contentBody article h2 {
+font-size: 150%;
+margin: 2em 0 .5em;
+}
+.contentBody article h3 {
+font-size: 125%;/*20px*/ line-height:1.4;/*28px*/ margin:2.25em 0 .8em;
+}
+body:lang(ja) {
+font-family: Georgia,"Hiragino Mincho Pro",serif;
+font-size: 87.5% !important;
+line-height: 1.72;
+margin-bottom: 1.72em;
+}
+.win :lang(ja) {
+font-family: Georgia,"Times New Roman","ＭＳ Ｐ明朝",Meiryo,san-serif;
+}
+body:lang(ja) .contentBody, body:lang(ja) .bodyText {
+font-size: 100%;
+}
+article div:lang(ja) {
+font-size: 87.5%;/*14px*/ line-height:1.72;/*16px*/ margin-bottom:1.72em;
+}
+.win article div:lang(ja) {
+letter-spacing: .1em;
+}
+body:lang(ja) article div:lang(ja) {
+font-size: 100%;
+}
+.contentBody article h2:lang(ja) {
+}
+.contentBody article h3:lang(ja) {
+font-size: 128.57%;/*18px*/ line-height:1.555;/*28px*/ margin:2.25em 0 .888em;
+}
+.win .contentBody article h3:lang(ja) {
+letter-spacing: .1em;
+}
+:lang(ja) .waokon {
+margin: 0 .25em;
+line-height: 1;
+vertical-align: baseline;
+word-spacing: -.02em;
+}
+:lang(ja) .waokon.shortMargin {
+margin: 0 .1em;
+}
+:lang(ja) .waokon.noLeftMargin {
+margin-left: 0;
+}
+:lang(ja) .waokon.noRightMargin {
+margin-right: 0;
+}
+code {
+white-space: pre;
+}
+* {
+-webkit-font-smoothing: antialiased
+}
+.wp_syntax {
+	font: 14px/15px 'Inconsolata', 'Consolas', 'Monaco', mono;
+}

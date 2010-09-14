@@ -1,0 +1,320 @@
+.forRMB {
+display: block;
+}
+body {
+width: 320px;
+}
+input {
+font-size: small;
+}
+form.sitesearch input[type=text] {
+width: 192px;
+padding: 3px 0;
+margin-right: 10px;
+}
+blockquote {
+margin-left: 0;
+padding-right: 0;
+}
+#shield {
+height: 100%;
+width: 100%;
+background-color: #000;
+opacity: .30;
+position: absolute;
+top: 0;
+left: 0;
+}
+.contentBody {
+line-height: 1.4;
+}
+.contentBody h1.contentTitle {
+font-size: 160%;
+line-height: 1.1;
+}
+.contentBody.blogEntry h1.contentTitle {
+margin-top: .8em;
+}
+.contentBody article h2 {
+font-size: 140%;
+margin: 1.5em 0 .5em;
+line-height: 1.25;
+}
+header, .contentBody, .contentBody.wide, .contentBody.blogEntry {
+margin: 0;
+padding: 0;
+width: auto;
+float: none;
+clear: both;
+position: static;
+}
+.contentBody, .contentBody.wide, .contentBody.blogEntry {
+margin: 10px;/*width:90%;*/
+}
+.topAside h3, footer h3, .superiorTitle, .red12px {
+margin-bottom: 2px;
+font-size: small;
+}
+h2.aside, h3.aside, h4.aside, h5.aside, h6.aside, .asideHeading, .asideBlock {
+position: static;
+text-align: left !important;
+width: 100%;
+}
+dl.entryList dt {
+padding-bottom: 0;
+}
+.entryList .asideBlock {
+margin-bottom: 1em;
+}
+.contentBody article ul, .contentBody article ol {
+margin-left: 35px;
+}
+.contentBody article ul.twitter {
+margin-left: 0;
+margin-bottom: 3em;
+}
+.lf, .lu {
+clear: both;
+float: none;
+margin: 0;
+overflow: visible;
+}
+.whc, .w1c, .w2c, .w3c, .w4c, .w5c, .w6c {
+width: auto;
+}
+header {
+margin: 0;
+padding: 0;
+height: 50px;
+position: relative;
+}
+header h1 a {
+width: 93px;
+height: 37px;
+margin-top: 20px;
+background-position: 0 -65px;
+}
+header a.forRMB {
+position: absolute;
+width: 81px;
+top: 10px;
+padding: 3px 6px 3px 8px;
+display: inline-block;
+font-size: 90%;
+color: #000;
+border: 1px solid #000;
+border-radius: 5px;
+-webkit-border-radius: 5px;
+background: -webkit-gradient(linear,left top,left bottom,from(#F8F8F8),color-stop(.35,#FCFCFC),color-stop(.75,#E6E6E6 ),to(#DBDBDB));
+}
+header a#iMenu {
+left: 105px;
+}
+header a#iLang {
+left: 213px;
+}
+header a.forRMB:after {
+content: '';
+display: inline-block;
+float: right;
+margin-top: 8px;
+width: 9px;
+height: 5px;
+background-image: url(../img/sprite_bullet.png);
+background-position: 0 -2100px;
+background-repeat: no-repeat;
+text-decoration: none;
+}
+header a.forRMB.focus {
+background: #fff;
+padding-bottom: 12px;
+border-bottom: none;
+z-index: 10;
+-webkit-border-bottom-left-radius: 0;
+-webkit-border-bottom-right-radius: 0;
+}
+header a.forRMB.focus:after {
+background-position: 0 -2150px;
+}
+header nav.mainNav, header nav.langSelector {
+position: absolute;
+top: 44px;
+right: 10px;
+padding: 0;
+display: none;
+width: 205px;
+z-index: 9;
+}
+header nav ul {
+border: 1px solid #000;
+background: #fff;
+-webkit-border-radius: 8px;
+}
+header nav.mainNav ul {
+-webkit-border-top-left-radius: 0;
+}
+header nav.langSelector ul {
+-webkit-border-top-right-radius: 0;
+}
+header nav ul .category {
+display: none;
+}
+header nav.mainNav ul ul, header nav.langSelector ul ul {
+border: none;
+margin: 0;
+}
+header nav.langSelector ul li {
+visibility: visible;
+}
+header nav ul li li {
+margin: 0;
+border-top: 1px solid #999;
+}
+header nav ul li:first-child li:first-child {
+border: none;
+}
+header nav ul li li a, header nav ul li li em a, header nav ul li li em span.emcontent {
+position: static;
+left: 0;
+display: block;
+padding: 7px 8px;
+line-height: 1;
+background: none;
+}
+header nav ul li li a:active {
+background: #666;
+color: #fff !important;
+}
+footer, footer .footerBottom {
+margin: 60px 10px 20px;
+}
+footer .footerBottom {
+margin: 20px 0 0;
+padding: 10px 0;
+}
+footer nav.footerNav ul li a {
+font-size: small;
+text-decoration: underline;
+}
+footer nav.footerNav ul li a:lang(en) {
+letter-spacing: 0;
+}
+footer .footerBottom .copyright {
+clear: left;
+text-align: left;
+display: block;
+font-size: small;
+}
+footer .lf .lu:first-child {
+width: 100%;
+padding-bottom: 2em;
+}
+footer .lf .lu h3 {
+margin-bottom: .4em;
+}
+footer .lf .lu.vcard {
+font-size: small;
+width: 93px;
+clear: none;
+float: left;
+margin-right: 10px;
+line-height: 1.2;
+}
+footer .lf .lu.vcard:nth-child(4) {
+margin-right: 0;
+}
+footer .lf .lu:last-child {
+display: none;
+}
+nav.blogSerial {
+position: relative;
+margin-top: 1.2em;
+padding: 0;
+text-align: right !important;
+}
+nav.blogSerial span.delimiter {
+display: none;
+}
+nav.blogSerial span.disabled, nav.blogSerial a:link, nav.blogSerial a:visited, nav.blogSerial a:hover {
+position: relative;
+padding: 0;
+font-size: medium;
+display: inline;
+}
+nav.blogSerial span.disabled:first-child, nav.blogSerial a:first-child {
+float: left;
+}
+dl.entryList.small dt a {
+text-decoration: underline;
+}
+footer, nav.similarEntries {
+margin-top: 3em;
+}
+.similarEntries dl.entryList.small dd {
+line-height: 1.2;
+}
+.similarEntries dl.entryList.small dd .asideBlock {
+margin-bottom: 0em;
+}
+.map {
+margin-top: 2em;
+}
+.contentBody object, .contentBody embed, .contentBody img {
+max-width: 300px;
+height: auto;
+}
+ul.tile.has6col, ul.tile6c {
+margin-left: -7px;
+}
+ul.tile.has6col li, ul.tile6c li {
+margin-left: 7px;
+}
+ul.tile.has4col, ul.tile4c {
+margin-left: -20px;
+}
+ul.tile.has4col li, ul.tile4c li {
+margin-left: 20px;
+}
+ol.commentlist {
+list-style: none;
+}
+.comment-author img {
+margin-left: 0;
+}
+#respond form {
+padding-top: .5em;
+}
+#respond form, #respond input[type=text], #respond textarea, .comment {
+width: 295px;
+}
+#respond label {
+display: block;
+margin: 1em 0 .2em;
+font-size: 12px;
+}
+#respond label .note {
+display: inline !important;
+font-size: 100%;
+margin: 0;
+}
+#respond label .note:before {
+content: "(";
+}
+#respond label .note:after {
+content: ")";
+}
+#respond form p {
+margin: .4em 0;
+}
+.quickSearchBlock .incrementalSearch, .quickSearchBlock .countIndicator {
+font-size: 100%;
+}
+.quickSearchBlock .incrementalSearch {
+margin-top: 4px;
+}
+.quickSearchBlock .countIndicator {
+margin-left: 10px;
+padding: 0 5px;
+border-radius: 6px;
+-webkit-border-radius: 6px;
+}
