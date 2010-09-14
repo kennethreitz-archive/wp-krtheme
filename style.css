@@ -8,7 +8,7 @@
 *	Tags:			monochrome,fixed width,simple,typographic,html5
 **/
 
-@media all {html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,svg,time,mark,audio,video {
+@media all {html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,svg,time,mark,audio,video {
 	font-family: 'goudy old style', 'minion pro', 'bell mt', Georgia, 'Hiragino Mincho Pro', serif;
 	background: transparent;
 	border: 0;
@@ -23,6 +23,7 @@ body {
 article,aside,details,figcaption,figure,footer,header,hgroup,img,menu,nav,section,svg {
 	display: block
 }
+
 .ie img {
 	-ms-interpolation-mode: bicubic
 }
@@ -537,6 +538,11 @@ label.HSC {
 #content {
 	margin-top: 1em;
 	padding-bottom: 3em
+}
+#content h1{
+	font-size: 200%;
+	line-height: 1.3334em;
+	margin-bottom: 0px;
 }
 #content aside {
 	left: -20em;
@@ -1152,4 +1158,22 @@ form ol li textarea {
 	left: 50%
 }
 
+code {
+white-space: pre;
 }
+
+* {
+-webkit-font-smoothing: antialiased
+}
+.wp_syntax {
+	font: 14px/15px 'Inconsolata', 'Consolas', 'Monaco', mono;
+	font-family: 'Inconsolata', 'Consolas', 'Monaco', mono !important;
+}
+
+.wp_syntax table {
+	border-spacing: 0px 0px;
+	border-collapse: collapse;
+	empty-cells: show;
+	font-size: 100%;
+}
+

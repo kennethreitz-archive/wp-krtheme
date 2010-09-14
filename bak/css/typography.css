@@ -41,7 +41,7 @@ line-height: 1.72;
 margin-bottom: 1.72em;
 }
 .win :lang(ja) {
-font-family: Georgia,"Times New Roman","ＭＳ Ｐ明朝",Meiryo,san-serif;
+font-family: Georgia,"Times New Roman",Meiryo,san-serif;
 }
 body:lang(ja) .contentBody, body:lang(ja) .bodyText {
 font-size: 100%;

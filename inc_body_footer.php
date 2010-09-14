@@ -44,7 +44,7 @@
             <li><?php echo ia3_helpers::get_nav_cell('Footer-2-1', ''); ?></li>
             <li><?php echo ia3_helpers::get_nav_cell('Footer-3-1', ''); ?></li>
             <li><?php echo ia3_helpers::get_nav_cell('Footer-4-1', ''); ?></li>
-            <li><a href="http://www.informationarchitects.jp/en/ia3/"><abbr title="Information Architects">iA</abbr>³ Template</a> © <?php echo date('Y') ?> Information Architects, Inc.</li>
+            <li>© <?php echo date('Y') ?> Kenneth Reitz <em>&amp;</em> Co.</li>
         </ul><!-- G6.GS#footerOne -->
     </nav>
 </footer>
