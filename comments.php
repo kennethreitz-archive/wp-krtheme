@@ -27,7 +27,7 @@ if (comments_open()): ?>
 	    </dl>
 	    <?php endif; ?>
 
-	    <form action="<?php echo (defined('WP_SITEURL'))? WP_SITEURL: get_bloginfo('url'); ?>/wp-comments-post.php" method="post" id="commentform">
+	    <form action="<?php echo (defined('WP_SITEURL'))? WP_SITEURL: get_bloginfo('url'); ?>/blog/wp-comments-post.php" method="post" id="commentform">
 	    	<fieldset>
 	    	    <ol>
 	    	        <li>
