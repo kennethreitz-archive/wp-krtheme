@@ -1,7 +1,7 @@
-<form method="get" action="<?php bloginfo('url'); ?>" class="sitesearch">
-	<fieldset>
-		<legend>Search for this site</legend>
-		<input type="text" id="s" name="s" value="<?php the_search_query(); ?>" placeholder="Search Keyword" />
-		<input type="submit" id="searchsubmit" value="Search" />
-	</fieldset>
+<form action="<?php echo (defined('WP_SITEURL'))? WP_SITEURL: get_bloginfo('url'); ?>" method="get">  	
+    <fieldset>
+        <label class="HSC" for="luke-skywalker"><?php _e('Search', 'ia3'); ?></label>
+        <input id="luke-skywalker" name="s" placeholder="" type="text" value="<?php the_search_query(); ?>" />
+        <input type="submit" value="<?php _e('Search', 'ia3'); ?>" />
+    </fieldset>
 </form>

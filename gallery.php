@@ -1,63 +1,79 @@
 <?php
-/*
-Template Name: Gallery
-*/
-add_action('wp_head', 'page_head');
-get_header();
-
-function page_head() {
-	?>
-	<style type="text/css" media="all">
-	.visualIndex {
-		margin-top: 6em;
-	}
-
-	.visualIndex .asideHeading {
-		margin-top: -.13em;
-	}
-	</style>
-	<?php
-}
+/**
+*   Template Name: Gallery
+**/
 ?>
-
-<?php if (have_posts()): while (have_posts()): the_post(); ?>
-<div class="contentBody">
-	<article>
-		<h1 class="contentTitle"><?php the_title(); ?></h1>
-		<div class="content">
-			<?php the_content(); ?>
-		</div>
-	</article>
-
-	<nav class="visualIndex">
-	<ul>
-		<li><div class="asideHeading superiorTitle">CATEGORY</div>
-			<ul class="tile has4col">
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-			</ul>
-		</li>
-		<li><div class="asideHeading superiorTitle">CATEGORY</div>
-			<ul class="tile has4col">
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-			</ul>
-		</li>
-		<li><div class="asideHeading superiorTitle">CATEGORY</div>
-			<ul class="tile has4col">
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-				<li><figure><a href="#"><img src="<?php bloginfo('template_url')?>/img/gallery_dummy.png" width="136" height="90" alt="dummy" /></a></figure></li>
-			</ul>
-		</li>
-	</ul>
-	</nav>
-</div><!-- /.contentBody -->
-
-<?php endwhile; endif; get_footer(); ?>
+<!DOCTYPE html>
+<!--[if IE 6 ]><html class="ie ielt9 ielt8 ielt7 ie6" lang="<?php bloginfo('language'); ?>"><![endif]-->
+<!--[if IE 7 ]><html class="ie ielt9 ielt8 ie7" lang="<?php bloginfo('language'); ?>"><![endif]-->
+<!--[if IE 8 ]><html class="ie ielt9 ie8" lang="<?php bloginfo('language'); ?>"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="<?php bloginfo('language'); ?>"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="<?php bloginfo('language'); ?>"><!--<![endif]-->
+    <head>
+        <?php @include('inc_head.php'); ?>
+    </head>
+    <body class="gallery">
+        <div id="screen">
+            <?php @include('inc_body_header.php'); ?>
+        
+            <section class="G4 GR GS" id="content">
+                <?php while (have_posts()): the_post(); ?>
+                <article>
+                    <header>
+                        <h1><?php the_title(); ?></h1>
+                    </header>
+                    <div class="formatted">
+                        <?php the_content(); ?>                        
+                    </div><!-- .formatted -->
+                </article>
+                <?php endwhile; ?>
+                <nav>
+                    <ul class="containsGalleries">
+                        <li>
+                            <h1>Category Name</h1>
+                            <ul class="containsGallery">
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-1"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-1"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-1"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-1"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-1"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-1"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-1"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-1"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                            </ul><!-- .containsGallery -->
+                        </li>
+                        <li>
+                            <h1>Category Name</h1>
+                            <ul class="containsGallery">
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-2"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-2"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-2"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-2"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-2"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-2"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-2"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-2"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-2"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-2"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-2"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-2"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>                                
+                            </ul><!-- .containsGallery -->
+                        </li>
+                        <li>
+                            <h1>Category Name</h1>
+                            <ul class="containsGallery">
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-3"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-3"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-3"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                                <li class="G1"><a href="http://www.placeholder-image.com/image/288x288" rel="gallery-3"><img alt="" src="http://www.placeholder-image.com/image/142x142" title="" /></a></li>
+                            </ul><!-- .containsGallery -->
+                        </li>
+                    </ul><!-- .containsGalleries -->
+                </nav>
+            </section><!-- #content.G4.GR.GS -->
+            <hr class="implied" />
+        
+            <?php @include('inc_body_footer.php'); ?>
+        </div><!-- #screen -->
+    </body>
+</html>

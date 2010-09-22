@@ -1,198 +1,77 @@
 <?php
-add_action('wp_head', 'page_head');
-get_header();
+/**
+*   Template Name: Index
+**/
 
-function page_head() {
-	?>
-	<style type="text/css" media="all">
-	.contentBody {
-		margin-bottom: 0;
-	}
-
-	.topAside {
-		margin: 30px 0 45px;
-		padding-top: 2em;
-		font-size: 107.14%;
-	}
-
-	article.emptyFeatured figure
-	{
-		background:#EaEaEa;
-		height:300px;
-	}
-
-	article.topFeatured hgroup,
-	article.topFeatured .content {
-		margin-left: 324px;
-	}
-
-	.webkit article.topFeatured hgroup,
-	.webkit article.topFeatured .content,
-	.mozilla article.topFeatured hgroup,
-	.mozilla article.topFeatured .content {
-		margin-left: 0;
-	}
-
-	article.topFeatured hgroup {
-		margin-top: 2em;
-		margin-bottom: 1em;
-	}
-
-	article.topFeatured h1 {
-		font-size:40px;
-		line-height: 1.075;
-		/*letter-spacing: .05em;*/
-	}
-
-	article.topFeatured h1 a:visited, article.topFeatured h1 a {
-		color: #000;
-		text-decoration: none;
-	}
-
-	article.topFeatured .content {
-		font-size: medium;
-		margin-bottom: 1em;
-	}
-
-	article.topFeatured .content p {
-		margin: 0;
-		text-indent: 2em;
-	}
-
-	article.topFeatured .content p:first-child {
-		text-indent: 0;
-	}
-
-	article.topFeatured .superiorTitle {
-		font-size: 102%;
-		letter-spacing: 0;
-		margin: 0;
-		text-transform: capitalize;
-	}
-
-	article.topFeatured .content h2 {
-		font-size: 120%;
-		line-height: 1.25;
-		margin: .65em 0;
-	}
-
-	.webkit article.topFeatured .content,
-	.mozilla article.topFeatured .content {
-		-webkit-column-count: 3;
-		-webkit-column-gap: 18px;
-		-moz-column-count: 3;
-		-moz-column-gap: 18px;
-		column-count: 3;
-		column-gap: 18px;
-	}
-
-	.whitebg {
-		border: 1px #fff solid !important;
-	}
-
-	#aboutia p {
-		margin-top: 1.05em;
-	}
-
-	#latestArtilcles dl {
-		margin: 0;
-	}
-
-	div.more-link {
-		margin-top: 1em;
-	}
-
-	@media screen and (max-device-width: 320px) {
-
-		article.topFeatured hgroup,
-		article.topFeatured .content {
-			margin-left: 0;
-		}
-
-		.webkit article.topFeatured .content {
-			-webkit-column-count: 1;
-			-webkit-column-gap: 0;
-			column-count: 1;
-			column-gap: 0;
-		}
-
-		article.topFeatured h1 {
-			font-size: 200%;
-		}
-
-		article.topFeatured .content p {
-			margin-bottom: 1.5em;
-			text-indent: 0;
-		}
-
-		#latestArtilcles {
-			margin-top: 2.5em;
-		}
-
-		.contentBody figure img {
-			margin-left: -10px;
-			max-width: 320px;
-		}
-
-		.whitebg {
-			border: none !important;
-			background: #fff;
-		}
-	}
-	</style>
-	<?php
-}
+$featured_id = 0;
 ?>
+<!DOCTYPE html>
+<!--[if IE 6 ]><html class="ie ielt9 ielt8 ielt7 ie6" lang="<?php bloginfo('language'); ?>"><![endif]-->
+<!--[if IE 7 ]><html class="ie ielt9 ielt8 ie7" lang="<?php bloginfo('language'); ?>"><![endif]-->
+<!--[if IE 8 ]><html class="ie ielt9 ie8" lang="<?php bloginfo('language'); ?>"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="<?php bloginfo('language'); ?>"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="<?php bloginfo('language'); ?>"><!--<![endif]-->
+    <head>
+        <?php @include('inc_head.php'); ?>
+    </head>
+    <body class="index">
+        <div id="screen">
+            <?php @include('inc_body_header.php'); ?>
+            
+            <div id="content">
+                <?php query_posts('category_name=Featured&showposts=1'); if (have_posts()): ?>
+                <section class="G6 GS">
+                    <h1 class="implied"><?php _e('Featured Article'); ?></h1>
+                    <?php while (have_posts()): the_post(); 
+                    $featured_id = get_the_ID();
+                    ?>
+                    <a href="<?php the_permalink() ?>">
+                        <?php if (has_post_thumbnail()): ?>
+                        <img alt="<?php the_title(); ?>" src="<?php $f = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); echo isset($f[0])? $f[0]: 'http://www.placeholder-image.com/image/942x504';?>" />
+                        <?php else: ?> 
+                        <!-- <img alt="<?php the_title(); ?>" src="<?php $f = get_post_custom_values('featured_image'); echo isset($f[0])? $f[0]: 'http://www.placeholder-image.com/image/942x504';?>" />    -->
+                        <?php endif; ?>                           
+                    </a>
+                    <hgroup>
+                        <h1><time datetime="<?php the_time('c') ?>" pubdate="pubdate"><?php the_date(); ?></time></h1>
+                        <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>                        
+                    </hgroup>
+                    <div class="formatted">
+                        <?php the_content('Read more'); ?>
+                    </div><!-- .formatted -->
+                    <?php endwhile; wp_reset_query(); ?>
+                </section><!-- G6 GS -->
+                <hr class="implied" />
+                <?php endif; ?>
+                
+                <section class="G2 GS">
+                    <?php if ((!function_exists('dynamic_sidebar')) || (!dynamic_sidebar())): ?>
+                    <div>
+                        <h1 class="HSC"><?php _e('About'); ?> <?php bloginfo('name'); ?></h1>
+                        <p><em><?php echo trim(get_bloginfo('description'), '.'); ?></em>. <a href="<?php echo (defined('WP_SITEURL'))? WP_SITEURL: get_bloginfo('url'); ?>/profile/"><?php _e('Learn more'); ?></a></p>
+                    </div>
+                    <?php endif; ?>
+                </section><!-- .ia.ia-2.ia-s -->
+                
+                <?php query_posts(array('post__not_in' => array($featured_id), 'showposts' => 3)); if (have_posts()): ?> 
+                <section class="G4">
+                    <h1 class="HSC"><?php _e('Latest Articles'); ?></h1>
+                    <dl class="containsArticles">
+                        <?php while(have_posts()): the_post(); ?>
+    					<dt><a class="title" href="<?php the_permalink() ?>"><?php the_title(); ?></a></dt>
+                        <dd>
+                            <?php echo preg_replace('/<p>(.+?)<\/p>/','$1',get_the_excerpt()); ?> <a href="<?php the_permalink() ?>" class="more-link"><?php _e('Read more', 'ia3'); ?><span class="implied"> &ndash; &lsquo;<?php the_title(); ?>&rsquo;</span>.</a>
+                        </dd>
+                        <?php endwhile; wp_reset_query(); ?>
+                    </dl><!-- .containsArticles -->
+                    <p><a href="<?php echo (defined('WP_SITEURL'))? WP_SITEURL: get_bloginfo('url'); ?>/articles/"><?php _e('All Articles'); ?></a></p>
+                </section><!-- G4 GR -->
+                <?php endif; ?>
+                <hr class="implied" />
+            </div><!-- #content -->
+            <hr class="implied" />
 
-<div class="contentBody wide">
-	<?php query_posts('category_name=Featured&showposts=1'); ?>
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-	<article <?php post_class('topFeatured') ?>>
-		<?php /* ?>
-		<figure>
-			<dd><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php $fi = get_post_custom_values('featured_image'); echo $fi[0]?>" class="whitebg featuredImage" alt="<?php the_title()?>"/></a></dd>
-		</figure>
-		<?php */ ?>
-		<hgroup>
-			<h2 class="superiorTitle"><?php the_time('F jS, Y') ?></h2>
-			<h1><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php $title = get_the_title(); the_title(); ?></a></h1>
-		</hgroup>
-		<div class="content entry">
-			<?php the_content('Read <span class="verbose">"'. $title .'"</span> more'); ?>
-		<!-- /.content entry--></div>
-	</article>
-	<?php endwhile;else: ?>
-	<article class="emptyFeatured">
-		<figure></figure>
-	</article>
-	<?php endif; ?>
-
-	<aside class="lf w6c topAside">
-		<section class="lu w2c first-child" id="aboutia">
-			<h3>ABOUT ME</h3>
-			<div class="content">
-				<p><em><?php bloginfo('description'); ?></em> <a href="<?php bloginfo('siteurl'); ?>/about/">Learn more</a>.</p>
-			<!-- /.content --></div>
-		<!--/.lu .w2c--></section>
-
-		<section class="lu w4c" id="latestArtilcles">
-			<h3>LATEST ARTICLES</h3>
-			<div class="content">
-				<dl class="entryList small">
-					<?php
-					query_posts('showposts=3');
-					if (have_posts()): while (have_posts()): the_post();
-					?>
-					<dt><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></dt>
-					<dd><?php echo preg_replace('/<p>(.+?)<\/p>/','$1',get_the_excerpt()); ?> <a href="<?php the_permalink() ?>" class="more-link">Read <span class="verbose">"<?php the_title(); ?>"</span> more</a></dd>
-					<?php
-					endwhile;endif;
-					wp_reset_query(); ?>
-				</dl>
-				<div class="more-link"><a href="<?php bloginfo('siteurl'); ?>/archive/">Archive</a></div>
-			<!-- /.content --></div>
-		<!--/.lu .w2c--></section>
-	<!--/.lf .w6c　.topAside--></aside>
-<!-- /.contentBody --></div>
-
-<?php get_footer()?>
+            <?php @include('inc_body_footer.php'); ?>
+        </div><!-- #screen -->
+    </body>
+</html>
