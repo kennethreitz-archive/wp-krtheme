@@ -312,4 +312,42 @@
     if (function_exists('add_theme_support')) {
         add_theme_support('post-thumbnails');
     }
+    
+    
+    header('Server: Muffins', true);
+    header('X-Consulting: Semantics are everything. me@kennethreitz.com for more info.');
+    header('X-Powered-By: The Interwebz');
+
+    $time = microtime(); 
+    $time = explode(" ", $time); 
+    $time = $time[1] + $time[0]; 
+    $finish = $time; 
+    $totaltime = ($finish - $start); 
+    header("X-runtime:".$totaltime);
+    
+    add_filter('body_class','browser_body_class');
+    function browser_body_class($classes) {
+    	global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+
+    	if($is_lynx) $classes[] = 'lynx';
+    	elseif($is_gecko) $classes[] = 'gecko';
+    	elseif($is_opera) $classes[] = 'opera';
+    	elseif($is_NS4) $classes[] = 'ns4';
+    	elseif($is_safari) $classes[] = 'safari';
+    	elseif($is_chrome) $classes[] = 'chrome';
+    	elseif($is_IE) $classes[] = 'ie';
+    	else $classes[] = 'unknown';
+
+    	if($is_iphone) $classes[] = 'iphone';
+    	return $classes;
+    }
+    
+    add_filter( 'the_generator', create_function('$a', "return null;") );
+
+    function showBrief($str, $length) {
+      $str = strip_tags($str);
+      $str = explode(" ", $str);
+      return implode(" " , array_slice($str, 0, $length));
+    }
+    
 ?>

@@ -23,6 +23,22 @@ body {
 article,aside,details,figcaption,figure,footer,header,hgroup,img,menu,nav,section,svg {
 	display: block
 }
+.wp_syntax {
+	font: 12px/14px 'Inconsolata', 'Consolas', 'Monaco', mono;
+	font-family: 'Inconsolata', 'Consolas', 'Monaco', mono !important;
+}
+
+.wp_syntax table {
+	border-spacing: 0px 0px;
+	border-collapse: collapse;
+	empty-cells: show;
+	font-size: 100%;
+	margin-bottom: -16px;
+}
+.line_numbers {
+	width: 20px;
+	color: lightgrey;
+}
 
 .ie img {
 	-ms-interpolation-mode: bicubic
@@ -97,7 +113,7 @@ input,select {
 	top: -999px;
 	width: 1px
 }
-address,blockquote,caption,cite,code,dl,figcaption,h1,h2,h3,h4,h5,h6,label,legend,ol,p,pre,ul,table {
+address,blockquote,caption,cite,dl,figcaption,h1,h2,h3,h4,h5,h6,label,legend,ol,p,pre,ul,table {
 	display: block;
 	font: normal normal 400 1em/1.5em 'goudy old style', 'minion pro', 'bell mt', Georgia, 'Hiragino Mincho Pro', serif;
 	list-style: none;
@@ -540,7 +556,7 @@ label.HSC {
 	padding-bottom: 3em
 }
 #content h1{
-	font-size: 200%;
+	font-size: 160%;
 	line-height: 1.3334em;
 	margin-bottom: 0px;
 }
@@ -558,11 +574,7 @@ label.HSC {
 	margin-bottom: 2em;
 	position: relative
 }
-#content header h1 {
-	font-size: 200%;
-	line-height: 1.3334em;
-	margin-bottom: 0
-}
+
 #content header h2 {
 	font-size: 87.5%;
 	font-style: italic;
@@ -1166,8 +1178,14 @@ white-space: pre;
 -webkit-font-smoothing: antialiased
 }
 .wp_syntax {
-	font: 14px/15px 'Inconsolata', 'Consolas', 'Monaco', mono;
+	font: 12px/14px 'Inconsolata', 'Consolas', 'Monaco', mono;
 	font-family: 'Inconsolata', 'Consolas', 'Monaco', mono !important;
+}
+.line_numbers {
+	width: 18px;
+}
+#content object {
+	display: none;
 }
 
 .wp_syntax table {
@@ -1175,5 +1193,10 @@ white-space: pre;
 	border-collapse: collapse;
 	empty-cells: show;
 	font-size: 100%;
+	margin-bottom: 20px;
+}
+#comments h1 {
+	font-size: 20px;
+}
 }
 

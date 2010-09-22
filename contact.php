@@ -23,34 +23,35 @@
                 </header><!-- G4 GR -->
                 <section class="G4 GR">
                     <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/img/map.png" />
-                    <p><a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Information+Architects,+Inc.&amp;sll=35.674494,139.711289&amp;sspn=0.010389,0.010868&amp;ie=UTF8&amp;hq=Information+Architects,+Inc.&amp;hnear=&amp;ll=35.674494,139.711289&amp;spn=0.010389,0.010868&amp;z=17&amp;iwloc=A"><?php _e('View in Google Maps', 'ia3'); ?></a></p>
+                    <p><a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=209+W+Boscawen+St,+Winchester,+VA+22601&sll=39.18566,-78.163334&sspn=0.115226,0.264187&ie=UTF8&hq=&hnear=209+W+Boscawen+St,+Winchester,+Virginia+22601&t=h&z=17"><?php _e('View in Google Maps', 'ia3'); ?></a></p>
                 </section><!-- G4 GR -->
                 <section class="G2 GS">
                     <dl class="containsAddress">
                         <dt><?php _e('Mail', 'ia3'); ?>:</dt>
-                        <dd class="email"><a href="mailto:contact@informationarchitects.jp">contact@informationarchitects.jp</a></dd>
+                        <dd class="email"><a href="mailto:ping@kennethreitz.com">ping@kennethreitz.com</a></dd>
                         <dt><?php _e('Phone', 'ia3'); ?>:</dt>
-                        <dd class="tel">+81-3-5913-9841</dd>
+                        <dd class="tel">+1.540.200.8536</dd>
                         <dt><?php _e('Twitter', 'ia3'); ?>:</dt>
-                        <dd class="twitter"><a class="twooser" href="http://twitter.com/ia">@ia</a></dd>
+                        <dd class="twitter"><a class="twooser" href="http://twitter.com/kennethreitz">@kennethreitz</a></dd>
                         <dt><?php _e('LinkedIn', 'ia3'); ?>:</dt>
-                        <dd class="linkedin"><a href="http://www.linkedin.com/in/informationarchitect">Oliver Reichenstein</a></dd>
-                        <dt class="url"><a href="http://informationarchitects.jp/" class="org">Information Architects, Inc.</a></dt>
+                        <dd class="linkedin"><a href="http://www.linkedin.com/in/kennethreitz">Kenneth Reitz</a></dd>
+                        <dt class="url"><a href="http://kennethreitz.com/" class="org">Kenneth Reitz</a></dt>
                         <dd class="address">
                             <address>
-                                Murayama Building 2F<br />
-                                2-20-13
-                                Jingu-mae,<br /> Shibuya-ku, 
-                                Tokyo
-                                150-0001<br />
-                                Japan
+                                209 West Boscawen Street<br />
+                                Suite 300<br />
+                                Winchester, Virginia<br /> 
+                                22601-4141<br />
+                                USA
                             </address>
                         </dd>
                     </dl>
-                    <form action="" method="">
+                    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=kennethreitz', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
                         <fieldset>
                             <label class="HSC" for="darth-vader"><?php _e('Newsletter', 'ia3'); ?>:</label>
-                            <input id="darth-vader" name="" type="text" value="" />
+                            <input type="hidden" value="kennethreitz" name="uri"><input type="hidden" name="loc" value="en_US">
+                            
+                            <input id="darth-vader" name="email" type="text" />
                             <input type="submit" value="<?php _e('Subscribe', 'ia3'); ?>" />
                         </fieldset>
                     </form>

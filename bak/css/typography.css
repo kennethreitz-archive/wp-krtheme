@@ -82,7 +82,7 @@ code {
 white-space: pre;
 }
 * {
--webkit-font-smoothing: antialiased
+-webkit-font-smoothing: antialiased;
 }
 .wp_syntax {
 	font: 14px/15px 'Inconsolata', 'Consolas', 'Monaco', mono;

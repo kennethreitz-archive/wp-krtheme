@@ -29,7 +29,7 @@ $featured_id = 0;
                         <?php if (has_post_thumbnail()): ?>
                         <img alt="<?php the_title(); ?>" src="<?php $f = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); echo isset($f[0])? $f[0]: 'http://www.placeholder-image.com/image/942x504';?>" />
                         <?php else: ?> 
-                        <img alt="<?php the_title(); ?>" src="<?php $f = get_post_custom_values('featured_image'); echo isset($f[0])? $f[0]: 'http://www.placeholder-image.com/image/942x504';?>" />   
+                        <!-- <img alt="<?php the_title(); ?>" src="<?php $f = get_post_custom_values('featured_image'); echo isset($f[0])? $f[0]: 'http://www.placeholder-image.com/image/942x504';?>" />    -->
                         <?php endif; ?>                           
                     </a>
                     <hgroup>
