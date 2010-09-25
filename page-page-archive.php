@@ -47,7 +47,7 @@
         								<?php echo $repo->description ?> <br />
 
         								<span class="grey">
-        									<a href="http://github.com/kennethreitz/<?php echo $repo->name ?>/zipball/HEAD" class="file zip grey"><span class="fileType">ZIP</span></a>
+        									<a href="http://github.com/kennethreitz/<?php echo $repo->name ?>/zipball/HEAD" class="file zip grey"><span class="fileType">ZIP</span></a> | 
         									<a href="http://github.com/kennethreitz/<?php echo $repo->name ?>/tarball/HEAD" class="file tar grey"><span class="fileType">TAR</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
 
         									Watchers: <?php echo $repo->watchers ?> &nbsp;&nbsp;&nbsp;&nbsp;
