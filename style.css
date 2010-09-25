@@ -40,6 +40,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,img,menu,nav,sectio
 	color: lightgrey;
 }
 
+.btc-summary {
+	display: none;
+}
 .ie img {
 	-ms-interpolation-mode: bicubic
 }
