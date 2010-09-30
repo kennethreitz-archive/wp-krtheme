@@ -64,7 +64,7 @@ $featured_id = 0;
                         </dd>
                         <?php endwhile; wp_reset_query(); ?>
                     </dl><!-- .containsArticles -->
-                    <p><a href="<?php echo (defined('WP_SITEURL'))? WP_SITEURL: get_bloginfo('url'); ?>/articles/"><?php _e('All Articles'); ?></a></p>
+                    <p><a href="<?php echo (defined('WP_SITEURL'))? WP_SITEURL: get_bloginfo('url'); ?>/blog/archive/"><?php _e('All Articles'); ?></a></p>
                 </section><!-- G4 GR -->
                 <?php endif; ?>
                 <hr class="implied" />
